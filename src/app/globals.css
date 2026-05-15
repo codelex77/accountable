@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'DM Serif Display';
+  src: url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
+}
+
+:root {
+  --background: #F0EDE6;
+  --foreground: #0E0E0F;
+  --accent: #C8B560;
+  --card: #FFFFFF;
+  --border: #E0E0E0;
+}
+
+[data-theme='dark'] {
+  --background: #0E0E0F;
+  --foreground: #F0EDE6;
+  --accent: #C8B560;
+  --card: #141414;
+  --border: #1C1C1D;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Serif Display', serif;
+}
+
+.mono {
+  font-family: 'DM Mono', monospace;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 128px;
+}
