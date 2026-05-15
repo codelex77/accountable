@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
-import withPWAInit from "next-pwa";
 
-const withPWA = withPWAInit({
+// Using require here is completely fine since next-pwa doesn't always ship with native ESM types
+const withPWA = require("next-pwa")({
   dest: "public",
   disable: process.env.NODE_ENV === "development",
   register: true,
@@ -9,10 +9,7 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  experimental: {
-    turbopack: {} // This tells Next.js to gracefully handle the Webpack override from next-pwa
-  }
+  /* your other config options here */
 };
 
 export default withPWA(nextConfig);
